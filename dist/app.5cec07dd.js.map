@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/app.ts"],"names":[],"mappings":"AAAA,QAAQ,CAAC,cAAT,CAAwB,KAAxB,EAA+B,WAA/B,GAA6C,gBAA7C","file":"app.5cec07dd.js","sourceRoot":"..","sourcesContent":["document.getElementById('app').textContent = 'My Application'\n"]}
