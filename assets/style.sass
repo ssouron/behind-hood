@@ -11,3 +11,53 @@ body
   height: 100%
   margin: 0
   padding: 0
+
+$primary: #6699ff
+
+button
+  border: none
+  border-radius: 0.33rem
+  padding: 0.5rem 1rem
+  background-color: $primary
+  color: white
+  &:hover
+    background-color: lighten($primary, 10%)
+  &:active
+    background-color: darken($primary, 10%)
+  &:focus
+    outline: none
+
+input[type=text]
+  padding: 0.5rem 0.5rem 0.25rem
+  border: none
+  border-top-left-radius: 0.33rem
+  border-top-right-radius: 0.33rem
+  border-bottom: 1px solid #333355
+  background-color: inherit
+  width: 100%
+  font-size: 1rem
+  &:focus
+    outline: none
+    background-color: white
+  &::placeholder
+    color: #bbbbbb
+    font-size: 0.9rem
+    font-style: italic
+
+.text-field-button
+  display: flex
+  flex-flow: row nowrap
+  button
+    margin-left: 1rem
+
+.viewer
+  margin-top: 3rem
+  display: flex
+  flex-flow: row nowrap
+  align-items: center
+  label
+    color: #999999
+    font-style: italic
+  p
+    font-weight: bold
+    margin-left: 2rem

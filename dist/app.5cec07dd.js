@@ -117,9 +117,423 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"src/app.ts":[function(require,module,exports) {
-document.getElementById('app').textContent = 'My Application';
-},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+})({"src/components/Component.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Component =
+/*#__PURE__*/
+function () {
+  function Component() {
+    _classCallCheck(this, Component);
+  }
+
+  _createClass(Component, [{
+    key: "render",
+    value: function render(parent) {
+      if (parent instanceof Component) {
+        parent.element.appendChild(this.element);
+      } else {
+        parent.appendChild(this.element);
+      }
+    }
+  }]);
+
+  return Component;
+}();
+
+exports.default = Component;
+},{}],"src/components/Button.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Component2 = _interopRequireDefault(require("./Component"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Button =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Button, _Component);
+
+  function Button(text) {
+    var _this;
+
+    _classCallCheck(this, Button);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Button).call(this));
+
+    _this.onClick = function () {
+      throw new Error('The click handler has not been defined in a Button component.');
+    };
+
+    _this.element = document.createElement('button');
+    _this.element.textContent = text;
+
+    _this.element.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      _this.onClick();
+    });
+
+    return _this;
+  }
+
+  return Button;
+}(_Component2.default);
+
+exports.default = Button;
+},{"./Component":"src/components/Component.ts"}],"src/components/TextInput.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Component2 = _interopRequireDefault(require("./Component"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var TextInput =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(TextInput, _Component);
+
+  function TextInput() {
+    var _this;
+
+    _classCallCheck(this, TextInput);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TextInput).call(this));
+
+    _this.onInput = function (text) {
+      throw new Error('The input handler has not been defined in a TextInput component.');
+    };
+
+    _this.onChange = function (text) {
+      throw new Error('The change handler has not been defined in a TextInput component.');
+    };
+
+    _this.element = document.createElement('input');
+    _this.element.type = 'text'; // event handler for the 'input' event
+
+    _this.element.addEventListener('input', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      _this.onInput(_this.element.value);
+    }); // event handler for the 'change' event
+
+
+    _this.element.addEventListener('change', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      _this.onChange(_this.element.value);
+    });
+
+    return _this;
+  }
+
+  _createClass(TextInput, [{
+    key: "placeholder",
+    get: function get() {
+      return this.element.placeholder;
+    },
+    set: function set(text) {
+      this.element.placeholder = text;
+    }
+  }, {
+    key: "value",
+    get: function get() {
+      return this.element.value;
+    },
+    set: function set(text) {
+      this.element.value = text;
+    }
+  }]);
+
+  return TextInput;
+}(_Component2.default);
+
+exports.default = TextInput;
+},{"./Component":"src/components/Component.ts"}],"src/components/TextFieldButton.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Component2 = _interopRequireDefault(require("./Component"));
+
+var _Button = _interopRequireDefault(require("./Button"));
+
+var _TextInput = _interopRequireDefault(require("./TextInput"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+
+function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var TextFieldButton =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(TextFieldButton, _Component);
+
+  function TextFieldButton() {
+    var _this;
+
+    _classCallCheck(this, TextFieldButton);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TextFieldButton).call(this));
+
+    _this.onInput = function (text) {
+      throw new Error('The handler for the input element on a TextFieldButton has not been defined.');
+    };
+
+    _this.onChange = function (text) {
+      throw new Error('The handler for the change element on a TextFieldButton has not been defined.');
+    }; // defines the wrapper
+
+
+    _this.element = document.createElement('div');
+    _this.element.className = 'text-field-button'; // defines and setup the text field
+
+    _this.textField = new _TextInput.default();
+    _this.textField.placeholder = 'Enter a text here...';
+
+    _this.textField.onInput = function (text) {
+      _this.onInput(text);
+    };
+
+    _this.textField.onChange = function (text) {}; // defines and setup the button
+
+
+    _this.button = new _Button.default('Submit');
+
+    _this.button.onClick = function () {
+      _this.onChange(_this.textField.value);
+    };
+
+    return _this;
+  }
+
+  _createClass(TextFieldButton, [{
+    key: "render",
+    // overloads the Component render method
+    value: function render(parent) {
+      // resets the wrapper
+      this.element.innerHTML = ''; // attach the two others components
+
+      this.textField.render(this.element);
+      this.button.render(this.element); // then render the wrapper in its parent
+
+      _get(_getPrototypeOf(TextFieldButton.prototype), "render", this).call(this, parent);
+    }
+  }, {
+    key: "placeholder",
+    get: function get() {
+      return this.textField.placeholder;
+    },
+    set: function set(text) {
+      this.textField.placeholder = text;
+    }
+  }, {
+    key: "value",
+    get: function get() {
+      return this.textField.value;
+    },
+    set: function set(value) {
+      this.textField.value = value;
+    }
+  }]);
+
+  return TextFieldButton;
+}(_Component2.default);
+
+exports.default = TextFieldButton;
+},{"./Component":"src/components/Component.ts","./Button":"src/components/Button.ts","./TextInput":"src/components/TextInput.ts"}],"src/components/Viewer.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Component2 = _interopRequireDefault(require("./Component"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Viewer =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Viewer, _Component);
+
+  function Viewer() {
+    var _this;
+
+    _classCallCheck(this, Viewer);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Viewer).call(this));
+    _this._label = '';
+    _this._content = '';
+    _this.element = document.createElement('div');
+    _this.element.className = 'viewer';
+    return _this;
+  }
+
+  _createClass(Viewer, [{
+    key: "update",
+    value: function update() {
+      this.element.innerHTML = "\n    <label>".concat(this._label, "&nbsp;</label>\n    <p>").concat(this._content, "&nbsp;</p>\n  ");
+    }
+  }, {
+    key: "label",
+    get: function get() {
+      return this._label;
+    },
+    set: function set(value) {
+      this._label = value;
+      this.update();
+    }
+  }, {
+    key: "content",
+    get: function get() {
+      return this._content;
+    },
+    set: function set(value) {
+      this._content = value;
+      this.update();
+    }
+  }]);
+
+  return Viewer;
+}(_Component2.default);
+
+exports.default = Viewer;
+},{"./Component":"src/components/Component.ts"}],"src/app.ts":[function(require,module,exports) {
+"use strict";
+
+var _TextFieldButton = _interopRequireDefault(require("./components/TextFieldButton"));
+
+var _Viewer = _interopRequireDefault(require("./components/Viewer"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var appElement = document.getElementById('app');
+var instantViewer = new _Viewer.default();
+instantViewer.label = 'I react to input events:';
+var validatedViewer = new _Viewer.default();
+validatedViewer.label = 'I react to change events:';
+var textFieldBtn = new _TextFieldButton.default();
+textFieldBtn.placeholder = 'Enter text here...';
+textFieldBtn.value = '';
+
+textFieldBtn.onInput = function (value) {
+  instantViewer.content = value;
+};
+
+textFieldBtn.onChange = function (value) {
+  validatedViewer.content = value;
+};
+
+function renderApp() {
+  if (appElement !== null) {
+    appElement.innerHTML = '';
+    textFieldBtn.render(appElement);
+    instantViewer.render(appElement);
+    validatedViewer.render(appElement);
+  }
+}
+
+renderApp();
+},{"./components/TextFieldButton":"src/components/TextFieldButton.ts","./components/Viewer":"src/components/Viewer.ts"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -147,7 +561,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45027" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40947" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

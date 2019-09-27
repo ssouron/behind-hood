@@ -12,5 +12,53 @@ body {
   margin: 0;
   padding: 0; }
 
+button {
+  border: none;
+  border-radius: 0.33rem;
+  padding: 0.5rem 1rem;
+  background-color: #6699ff;
+  color: white; }
+  button:hover {
+    background-color: #99bbff; }
+  button:active {
+    background-color: #3377ff; }
+  button:focus {
+    outline: none; }
+
+input[type=text] {
+  padding: 0.5rem 0.5rem 0.25rem;
+  border: none;
+  border-top-left-radius: 0.33rem;
+  border-top-right-radius: 0.33rem;
+  border-bottom: 1px solid #333355;
+  background-color: inherit;
+  width: 100%;
+  font-size: 1rem; }
+  input[type=text]:focus {
+    outline: none;
+    background-color: white; }
+  input[type=text]::placeholder {
+    color: #bbbbbb;
+    font-size: 0.9rem;
+    font-style: italic; }
+
+.text-field-button {
+  display: flex;
+  flex-flow: row nowrap; }
+  .text-field-button button {
+    margin-left: 1rem; }
+
+.viewer {
+  margin-top: 3rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center; }
+  .viewer label {
+    color: #999999;
+    font-style: italic; }
+  .viewer p {
+    font-weight: bold;
+    margin-left: 2rem; }
+
 
 /*# sourceMappingURL=/style.63739fc5.css.map */
